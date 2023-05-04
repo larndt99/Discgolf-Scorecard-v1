@@ -1,0 +1,15 @@
+<h1>Select a Course</h1>
+
+<mat-list role="list">
+    <ng-container *ngFor="let course of courses">
+        <mat-list-item>
+        <div class="row">
+            <div> {{course.name}}</div>
+            <div> {{course.address}}</div>
+            <div> # of Holes: {{course.holes.length}}</div>
+            <button mat-raised-button color="primary" class="button" (click)="createScorecard(course)">Play</button>
+        </div>
+
+        </mat-list-item>
+    </ng-container>
+  </mat-list>

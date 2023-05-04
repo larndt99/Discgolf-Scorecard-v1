@@ -1,0 +1,14 @@
+<form class="example-form">
+      <input [(ngModel)]="name" placeholder="Player Name" name="name">
+    <br>
+    <button mat-raised-button color="primary" (click)="addPlayer()" [disabled]="!name">Add Player</button>
+  </form>
+
+  <mat-selection-list #players [multiple]="true" [(ngModel)]="selectedPlayers">
+    <mat-list-option checkboxPosition="before" [value]="player" *ngFor="let player of names">
+      {{player}}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <button mat-raised-button color="primary" [disabled]="!selectedPlayers.length" [mat-dialog-close]="selectedPlayers">Start Game</button>
+  <button mat-button mat-dialog-close>Cancel</button>

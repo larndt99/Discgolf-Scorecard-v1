@@ -1,0 +1,46 @@
+<mat-tab-group>
+    <mat-tab [label]="hole.hole.toString()" *ngFor="let hole of scorecard.course.holes">
+        <div *ngFor="let player of scorecard.players">
+            <br>
+            <br>
+        
+            <h4>{{ player.playerName }}</h4>
+         
+            <app-score-toggle *ngIf="player.stats[hole.hole - 1]?.strokes != undefined"
+                [(score)]="player.stats[hole.hole - 1].strokes" 
+                [par]="hole.par"
+
+                >
+            </app-score-toggle>
+
+
+
+        </div>
+
+
+    </mat-tab>
+    
+    <mat-tab label="Results">
+    
+        <table>
+            <tr>
+                <th>Hole</th>
+                <th *ngFor="let hole of scorecard.course.holes">{{ hole.hole }}</th>
+                <th>Total Par</th>
+            </tr>
+            <tr>
+                <th>Par</th>
+                <td *ngFor="let hole of scorecard.course.holes">{{ hole.par }}</td>
+                <td> {{ scorecard.par }} </td>
+            </tr>
+            <tr *ngFor="let player of scorecard.players">
+                <th>{{ player.playerName }}</th>
+                <td *ngFor="let stat of player.stats">{{ stat.strokes }}</td>
+                <td>{{ getTotalStrokes(player.playerName) }}</td>
+            
+            </tr>
+        </table>
+    
+    </mat-tab>>
+  </mat-tab-group>
+<button mat-dialog-close mat-raised-button color="primary">Close</button>

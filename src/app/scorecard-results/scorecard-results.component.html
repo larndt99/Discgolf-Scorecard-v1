@@ -1,0 +1,18 @@
+<h1>Match Results</h1>
+
+<mat-list role="list">
+    
+    <ng-container *ngFor="let scorecard of scorecards">
+        <mat-list-item>
+        <div class="row">
+            
+            <div> {{scorecard.course.name}}</div>
+            <div> {{scorecard.dateCreated}}</div>
+            <div *ngFor="let player of scorecard.players"> {{ player.playerName }}</div>
+            <button mat-raised-button color="primary" class="button" (click)="editScorecard(scorecard)">View Scorecard</button>
+
+        </div>
+
+        </mat-list-item>
+    </ng-container>
+  </mat-list>

@@ -1,0 +1,11 @@
+
+<div class="toggle">
+    <button mat-icon-button color="primary"  (click)="subtractScore()">
+        <mat-icon>remove_circle</mat-icon>
+      </button> 
+  <div>{{ score ? score : "-" }}</div>
+
+  <button mat-icon-button color="primary" (click)="addScore()">
+    <mat-icon >add_circle</mat-icon>
+  </button>  
+  </div>

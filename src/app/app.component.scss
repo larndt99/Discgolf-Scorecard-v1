@@ -1,0 +1,19 @@
+:host {
+    background: #246EE9;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    mat-drawer-container {
+     flex: 1;
+    }
+
+    mat-drawer-content {
+        background: #fffff0;
+    }
+
+    .cdk-overlay-pane {
+        max-width: 100% !important;
+    }
+}
+

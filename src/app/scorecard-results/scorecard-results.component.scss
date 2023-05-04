@@ -1,0 +1,15 @@
+:host {
+    .row {
+        display: flex;
+        flex-direction: column !important;
+    }
+    mat-list-item {
+        background-color: white;
+        margin-bottom: 10px;
+        height: 100%
+
+    }
+
+
+ 
+}
